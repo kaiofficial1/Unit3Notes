@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Change Contents of an Element Notes</title>
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,8 +22,9 @@
             <div>
                 <label for="last">Last Name</label>
                 <input type="text" id="last" name="last_name" placeholder="Doe">
+                <p class="hidden"></p>
             </div>
-            <p></p>
+            <button name="clear">Clear</button>
         </div>
     </div>
 </div>
@@ -26,13 +32,31 @@
     const firstName = document.getElementById('first');
     const lastName = document.getElementById('last');
     const full = document.querySelector('p');
+    const clearButton = document.querySelector('[name="clear"]');
 
     firstName.addEventListener('change',  function(e){
         let first = firstName.value;
         let last = lastName.value;
         let fullName = `Hello ${first} ${last}!`;
+        if (fullName,length>1){
+            full.classList.remove("hidden")
+        }  else{
+            full.classlist.add("hidden")
+        }
+        full.textContent = `Hello ${fullName}!`;
+    });
+    lastName.addEventListener('change',  function(e){
+        let first = firstName.value;
+        let last = lastName.value;
+        let fullName = `Hello ${first} ${last}!`;
         full.textContent = fullName;
     });
+
+    clearButton.addEventListener('click', function(e){
+        firstName.value="";
+        lastName.value="";
+        full.textContent="";
+    })
 </script>
 </body>
 </html>

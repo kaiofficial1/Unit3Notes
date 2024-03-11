@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <link rel="stylesheet"href="style.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>Celcsius converter</h3>
+        <div class="row">
+            <div>
+                <label for="fahrenheit">Fahrenheit</label>
+                <input type="text" id="fahrenheit" name="fahrenheit" style="width: 100px;">
+            </div>
+            <div>
+                <label for="celcius">Celcius</label>
+                <input type="text" id="celcius" name="celcius" style="width: 100px;">
+            </div>
+        </div>
+        <button id="calc">Calculate</button>
+        <button id="clear">Clear</button>
+        <p></p>
+    </div>
+</div>
+<script>
+    const cel = document.getElementById('celcius');
+    const fah = document.getElementById('fahrenheit');
+    const ans = document.querySelector('p');
+    const clearButton = document.getElementById('clear')
+    function FtoC(num1) {
+        return (num1 - 32) * 5/9;
+    }
+    function checkIsValid(num){
+        if (isNaN(num)){
+            return false
+        }
+        return true
+    }
+    calculateButton.addEventListener('click', function(e){
+        let sideA = +a.value;
+        let sideB = +b.value;
+        let sideC = +c.value;
+
+        if (checkIsValid(!checkIsValid(sideA) || !checkIsValid(sideB) || !checkIsValid(sideC))){
+            ans.textContent = 'Invalid Input'
+            return;
+        }
+
+        if (area(sideA, sideB, sideC)){
+            ans.textContent = 'Inputs do NOT create a valid triangle'
+            return;
+        }
+        ans.textContent = 'Inputs do create a valid triangle'
+    })
+    clearButton.addEventListener('click', function (e){
+        a.value = " "
+        b.value = " "
+        c.value = " "
+    })
+
+</script>
+</body>
+</html>

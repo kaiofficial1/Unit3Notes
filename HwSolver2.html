@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area of a Rectangle</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>Area of a Rectangle</h3>
+        <div class="row">
+            <div>
+                <label for="length">Length</label>
+                <input type="text" id="length" name="length" style="width: 100px;">
+            </div>
+            <div>
+                <label for="width">Width</label>
+                <input type="text" id="width" name="width" style="width: 100px;">
+            </div>
+        </div>
+        <button id="calc">Calculate Area</button>
+        <button id="clear">Clear</button>
+        <p></p>
+    </div>
+</div>
+<script>
+    const lengthInput = document.getElementById('length');
+    const widthInput = document.getElementById('width');
+    const ans = document.querySelector('p');
+    const calculateButton = document.getElementById('calc');
+    const clearButton = document.getElementById('clear');
+
+    function calculateAreaOfRec(length, width) {
+        return length * width;
+    }
+
+    calculateButton.addEventListener('click', function() {
+        const length = parseFloat(lengthInput.value);
+        const width = parseFloat(widthInput.value);
+
+        if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+            ans.textContent = 'Invalid input';
+            return;
+        }
+
+        const area = calculateAreaOfRec(length, width);
+        ans.textContent = `Area of the rectangle is: ${area}`;
+    });
+
+    clearButton.addEventListener('click', function() {
+        lengthInput.value = '';
+        widthInput.value = '';
+        ans.textContent = '';
+    });
+</script>
+</body>
+</html>
+
