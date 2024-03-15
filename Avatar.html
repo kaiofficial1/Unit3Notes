@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avatar</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <button id="1">Korra</button>
+            <button id="2">Aang</button>
+            <button id="3">Roku</button>
+        </div>
+        <div class="row">
+            <button id="4">Kyoshi</button>
+            <button id="5">Karuk</button>
+            <button id="6">Yangchen</button>
+        </div>
+        <button id="clear">CLEAR</button>
+        <!-- Image element to display the avatar -->
+        <img id="avatarImage" src="" alt="Avatar Image">
+    </div>
+</div>
+<script>
+    const korraButton = document.getElementById('1');
+    const aangButton = document.getElementById('2')
+    const rokuButton = document.getElementById('3')
+    const kyoshiButton = document.getElementById('4')
+    const karukButton = document.getElementById('5')
+    const yangchenButton = document.getElementById('6')
+    const avatarImage = document.getElementById('avatarImage');
+    const clear = document.getElementById('clear')
+
+    korraButton.addEventListener('click', function(e){
+        avatarImage.src = 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/avatar-the-last-airbender/1/17/Korra_img.jpg?width=325';
+    });
+    aangButton.addEventListener('click', function(e){
+        avatarImage.src = 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png';
+    });
+    rokuButton.addEventListener('click', function(e){
+        avatarImage.src = 'https://qph.cf2.quoracdn.net/main-qimg-b34e90aceb60257be11e8f1bcef61ed0-lq';
+    });
+    kyoshiButton.addEventListener('click', function(e){
+            avatarImage.src = 'https://qph.cf2.quoracdn.net/main-qimg-e2f807b39aa5a4dcb6326a02d508765e';
+    });
+    karukButton.addEventListener('click', function(e){
+        avatarImage.src = 'https://static.wikia.nocookie.net/avatar/images/d/d1/Kuruk.png/revision/latest?cb=20081225191014';
+    });
+    yangchenButton.addEventListener('click', function(e){
+        avatarImage.src = 'https://static1.srcdn.com/wordpress/wp-content/uploads/2020/06/Avatar-Yangchen-.jpg';
+    });
+    clear.addEventListener('click', function() {
+        avatarImage.src = ''; // Clears the src attribute, removing the image
+    });
+</script>
+</body>
+</html>
